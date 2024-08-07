@@ -12,7 +12,7 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       '@logtail/pino':
-        specifier: ^0.5
+        specifier: ^0.5.0
         version: 0.5.0(pino@9.3.2)
       inngest:
         specifier: ^3.22.1
