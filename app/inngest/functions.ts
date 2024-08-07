@@ -1,7 +1,27 @@
+import { InngestMiddleware } from "inngest";
 import { inngest } from "./client";
+// import { Logger } from "pino";
+import { Logger, ProxyLogger } from "inngest/middleware/logger";
+
+const loggerMiddleware = new InngestMiddleware({
+  name: "logger-middleware",
+  init: ({ client }) => {
+    return {
+      onFunctionRun() {
+        const providedLogger: Logger = client["logger"];
+        const logger = new ProxyLogger(providedLogger);
+        return {
+          async beforeResponse() {
+            await logger.flush();
+          },
+        };
+      },
+    };
+  },
+});
 
 export const helloWorld = inngest.createFunction(
-  { id: "hello-world" },
+  { id: "hello-world", middleware: [loggerMiddleware] },
   { event: "test/hello.world" },
   async ({ event, step, logger }) => {
     logger.info("Incoming, running steps...");
