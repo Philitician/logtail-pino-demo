@@ -1,15 +1,15 @@
-import { nodeLogger } from "@/lib/node-logger";
+import { logger } from "@/lib/logger";
 
 export function NodeLoggerButton() {
   return (
     <form
       action={async () => {
         "use server";
-        nodeLogger.info("Node logger button clicked", {
-          name: "Rene",
-          age: 40,
+        logger.info("Node logger button clicked", {
+          name: "Philip",
+          age: 34,
         });
-        nodeLogger.flush();
+        logger.flush();
       }}
     >
       <button>Node logger</button>
