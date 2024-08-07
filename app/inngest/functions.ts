@@ -8,8 +8,7 @@ const loggerMiddleware = new InngestMiddleware({
   init: ({ client }) => {
     return {
       onFunctionRun() {
-        const providedLogger: Logger = client["logger"];
-        const logger = new ProxyLogger(providedLogger);
+        const logger = new ProxyLogger(client["logger"]);
         return {
           async beforeResponse() {
             await logger.flush();
