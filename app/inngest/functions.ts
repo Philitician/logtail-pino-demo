@@ -43,7 +43,7 @@ export const heartbeat = inngest.createFunction(
     id: "heartbeat",
     middleware: [loggerMiddleware],
   },
-  { cron: "0 * * * *" },
+  { cron: "0/10 * * * *" },
   async ({ logger }) => {
     logger.info("Beep");
   }
