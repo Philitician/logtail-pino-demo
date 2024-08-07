@@ -6,6 +6,7 @@ export function NodeLoggerButton() {
       action={async () => {
         "use server";
         nodeLogger.info("Node logger button clicked");
+        nodeLogger.flush();
       }}
     >
       <button>Node logger</button>
