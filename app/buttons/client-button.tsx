@@ -1,16 +1,14 @@
-import { logger } from "@/lib/logger";
+"use client";
+import { loggerAction } from "./_actions";
 
 export function ClientButton() {
   return (
     <button
       onClick={() => {
-        logger.info("Log from client", {
-          name: "Unkown",
-          age: 99,
-        });
+        void loggerAction();
       }}
     >
-      Log from client
+      Log from Client
     </button>
   );
 }

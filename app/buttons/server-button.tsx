@@ -11,7 +11,7 @@ export function ServerButton() {
         });
       }}
     >
-      <button>Log from client</button>
+      <button>Log from Server</button>
     </form>
   );
 }
