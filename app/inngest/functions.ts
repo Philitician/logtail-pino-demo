@@ -43,7 +43,7 @@ export const heartbeat = inngest.createFunction(
     id: "heartbeat",
     middleware: [loggerMiddleware],
   },
-  { cron: "0/10 * * * *" },
+  { cron: "0/30 * * * *" },
   async ({ logger }) => {
     logger.info("BEEP");
   }
@@ -51,7 +51,7 @@ export const heartbeat = inngest.createFunction(
 
 export const heartbeatNoMiddleware = inngest.createFunction(
   { id: "heartbeat-no-middleware" },
-  { cron: "0/10 * * * *" },
+  { cron: "15,45 * * * *" },
   async ({ logger }) => {
     logger.info("BOOP (no middleware)");
   }
