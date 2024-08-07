@@ -37,3 +37,14 @@ export const helloWorld = inngest.createFunction(
     return { event, body: "Hello, World!" };
   }
 );
+
+export const heartbeat = inngest.createFunction(
+  {
+    id: "heartbeat",
+    middleware: [loggerMiddleware],
+  },
+  { cron: "0 * * * *" },
+  async ({ logger }) => {
+    logger.info("Beep");
+  }
+);
