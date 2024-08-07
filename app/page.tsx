@@ -1,5 +1,5 @@
-import { ClientButton } from "./buttons/client-button";
-import { ServerButton } from "./buttons/server-button";
+import { ClientButton } from "../components/buttons/client-button";
+import { ServerButton } from "../components/buttons/server-button";
 
 export default function Home() {
   return (
