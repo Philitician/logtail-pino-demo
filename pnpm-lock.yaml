@@ -11,6 +11,9 @@ importers:
       '@logtail/pino':
         specifier: ^0.4.22
         version: 0.4.22(pino@9.3.2)
+      logtail-pino-demo:
+        specifier: 'link:'
+        version: 'link:'
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
