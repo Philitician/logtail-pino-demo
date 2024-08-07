@@ -1,7 +1,6 @@
 import { InngestMiddleware } from "inngest";
 import { inngest } from "./client";
-// import { Logger } from "pino";
-import { Logger, ProxyLogger } from "inngest/middleware/logger";
+import { ProxyLogger } from "inngest/middleware/logger";
 
 const loggerMiddleware = new InngestMiddleware({
   name: "logger-middleware",
