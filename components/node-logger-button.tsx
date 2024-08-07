@@ -5,7 +5,10 @@ export function NodeLoggerButton() {
     <form
       action={async () => {
         "use server";
-        nodeLogger.info("Node logger button clicked");
+        nodeLogger.info("Node logger button clicked", {
+          name: "Rene",
+          age: 40,
+        });
         nodeLogger.flush();
       }}
     >

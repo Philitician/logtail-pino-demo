@@ -1,6 +1,6 @@
 import { logger } from "@/lib/logger";
 
-export function ServerButton() {
+export function PinoLoggerButton() {
   return (
     <form
       action={async () => {
@@ -9,6 +9,7 @@ export function ServerButton() {
           name: "Philip",
           age: 34,
         });
+        logger.flush();
       }}
     >
       <button>Log from Server</button>
