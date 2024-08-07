@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@logtail/node':
+        specifier: ^0.5.0
+        version: 0.5.0
       '@logtail/pino':
         specifier: ^0.5
         version: 0.5.0(pino@9.3.2)
